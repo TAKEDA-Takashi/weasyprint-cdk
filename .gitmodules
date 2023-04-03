@@ -1,0 +1,3 @@
+[submodule "cloud-print-utils"]
+	path = cloud-print-utils
+	url = https://github.com/kotify/cloud-print-utils.git

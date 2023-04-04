@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="jp">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>{{ title }}</title>
+</head>
+
+<body class="main">
+    <section class="page">
+        <h2>{{ title }}</h2>
+        <nav class="security-check">
+            <p class="nav-title">■セキュリティチェック</p>
+            <p class="nav-info">AWS Security Hubによる各種AWSリソースの設定状況をチェックした結果です。特に高レベルの問題は0件になるように目指し、AWS Security
+                Hubのユーザーガイドを参考にAWSリソースの設定の修正あるいはリスクを許容して抑制してスコアを改善しましょう。</p>
+            <ol class="card-container">
+                <li class="cards cards2">
+                    <div class="gauge-wrapper">
+                        <p class="label">セキュリティスコア</p>
+                        <div class="gauge-container">
+                            <div class="gauge-bg">
+                                <div class="gauge"
+                                    style="background-color: #3184c2; transform: rotate({{ score_rotate }}deg);"></div>
+                            </div>
+                            <div class="gauge-content">
+                                <span class="percentage" style="color: #16191f;">{{ securityhub_score }}%</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="cards">
+                    <div class="cards-contents-wrapper">
+                        <p class="label">先月との差</p>
+                        <div class="cards-contents-container">
+                            <p class="cards-contents font-color-status-positive">{{ diff_score }}</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="cards">
+                    <div class="cards-contents-wrapper">
+                        <p class="label">高レベルの問題</p>
+                        <div class="cards-contents-container">
+                            <p class="cards-contents font-color-status-high">{{ high_count }}件</p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+    </section>
+</body>
+
+</html>

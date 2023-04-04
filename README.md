@@ -1,8 +1,34 @@
 # weasyprint-cdk
 
-This is a blank project for CDK development with TypeScript.
+## 前提
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+次のソフトウェアはインストールしておく必要があります。
+
+- Docker
+- Node
+
+## 設定ファイルなど上書き
+
+サブモジュールである`cloud-print-utils`のファイルを一部上書きします。
+
+```bash
+$ rsync -a overwrite/ cloud-print-utils/
+```
+
+## デプロイ
+
+初回はブートストラップを実行します。
+
+```bash
+$ npm install
+$ npx cdk bootstrap
+```
+
+普通にデプロイすればOKです。
+
+```bash
+$ npx cdk deploy
+```
 
 ## Useful commands
 
